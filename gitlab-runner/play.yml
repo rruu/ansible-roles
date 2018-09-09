@@ -1,0 +1,28 @@
+---
+- hosts:
+    - all
+  #become: yes
+  vars:
+    # concurent = 4
+    gitlab_multirunner:
+      runners:
+        - name: runner_shell
+          state: present
+          ci_server: https://gitlab.com/
+          token: FDLbvyxq1Qvn-23jzZxN
+          executor: shell
+          #env: 
+          #  - "VAR1=value"
+          #  - "VAR2=value"
+          #tags:
+          #  - my1
+          #  - my2
+
+        - name: docker-runner1
+          state: present
+          ci_server: https://gitlab.com/
+          token: FDLbvyxq1Qvn-23jzZxN
+          executor: docker
+          docker_image: ubuntu:16.04
+  roles:
+    - runner
