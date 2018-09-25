@@ -1,0 +1,5 @@
+[all]
+af-gate-test-01 ansible_ssh_host=172.30.37.11  my_host_alias=af-gate-test-01
+af-gate-test-02 ansible_ssh_host=172.30.37.102 my_host_alias=af-gate-test-02
+#dns1
+#dns2

@@ -38,3 +38,7 @@
 docker-install - https://github.com/nickjj/ansible-docker
 
 gitlab-runner - https://github.com/gtrafimenkov/ansible-role-gitlab-ci-multi-runner
+
+bind - https://github.com/bertvv/ansible-role-bind
+
+#### TODO

@@ -1,0 +1,50 @@
+---
+- hosts: all
+  roles:
+      - bind
+  become: true
+  vars:
+    bind_zone_master_server_ip: 172.30.37.254
+    bind_allow_query:
+      - any
+    bind_listen_ipv4:
+      - any
+    bind_forwarders:
+      - '8.8.8.8'
+      - '8.8.4.4'
+    bind_recursion: true
+    bind_rrset_order: random
+    bind_allow_recursion:
+      - any
+    bind_zone_domains:
+      - name: 'domain.test'
+        networks:
+          - '172.30.31'
+        name_servers:
+          - 'ns1'
+          - 'ns2'
+        hosts:
+          - name: ns1
+            ip: 172.30.37.254
+          - name: ns2
+            ip: 172.30.37.252
+          - name: h01
+            ip: 172.30.37.100
+          - name: h02
+            ip: 172.30.37.102
+          - name: '*.k8s'
+            ip: 172.30.37.103
+      - name: 'example.com'
+        networks:
+          - '8.8.8'
+        name_servers:
+          - 'ns1.domain.test.'
+          - 'ns2.domain.test.'
+        hosts:
+          #- name: ns1
+          #  ip: 172.30.37.11
+          #- name: ns2
+          #  ip: 172.30.37.102
+          - name: gitlab
+            ip: 8.8.8.3
+
