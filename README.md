@@ -3,7 +3,7 @@
 #### docker + multi gitlab runner
 `ansible-playbook -i hosts play.yml`
 
-#### example playbook
+#### example playbook gitlab-runner & docker
 ```
 ---
 - hosts: all
@@ -35,10 +35,12 @@
 ```
 
 #### roles
-docker-install - https://github.com/nickjj/ansible-docker
-
-gitlab-runner - https://github.com/gtrafimenkov/ansible-role-gitlab-ci-multi-runner
-
+docker-install - https://github.com/nickjj/ansible-docker  
+gitlab-runner - https://github.com/gtrafimenkov/ansible-role-gitlab-ci-multi-runner  
 bind - https://github.com/bertvv/ansible-role-bind
+
+ansible-role-nvidia-driver - https://github.com/uchida/ansible-role-nvidia-driver  
+dependencies: ansible-role-nvidia-repo - https://github.com/uchida/ansible-role-nvidia-repo
+
 
 #### TODO

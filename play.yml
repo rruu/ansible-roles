@@ -23,4 +23,4 @@
 
   roles:
    - docker-install
-   - gitlab-runner
+#   - gitlab-runner

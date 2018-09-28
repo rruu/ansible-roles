@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - role: ansible-role-nvidia-driver
+      nvidia_driver_repo: nvidia
