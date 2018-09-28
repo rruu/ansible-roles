@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Akihiro Uchida
+  description: ansible role to install NVIDIA graphics drivers
+  license: CC0
+  min_ansible_version: 2.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+    - nvidia
+dependencies:
+  - role: ansible-role-nvidia-repo
+    version: 0.1.2
+    when: nvidia_driver_repo == "nvidia"

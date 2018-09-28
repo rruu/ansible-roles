@@ -1,0 +1,21 @@
+---
+
+- name: apt key for NVIDIA is added
+  apt_key:
+    url: "https://developer.download.nvidia.com/compute/cuda/repos/{{ nvidia_repo_distarch }}/7fa2af80.pub"
+    id: 7fa2af80
+    state: present
+
+- name: NVIDIA CUDA repository is registered
+  apt_repository:
+    repo: 'deb http://developer.download.nvidia.com/compute/cuda/repos/{{ nvidia_repo_distarch }} /'
+    state: present
+    filename: cuda
+    update_cache: "{{ 'yes' if not ansible_check_mode | bool else 'no' }}"
+
+- name: NVIDIA Machine Learning repository is registered
+  apt_repository:
+    repo: 'deb http://developer.download.nvidia.com/compute/machine-learning/repos/{{ nvidia_repo_distarch }} /'
+    state: present
+    filename: machine-learning
+    update_cache: "{{ 'yes' if not ansible_check_mode | bool else 'no' }}"

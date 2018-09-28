@@ -1,0 +1,6 @@
+---
+- hosts: test
+  connection: docker
+  remote_user: root
+  roles:
+    - ansible-role-nvidia-repo

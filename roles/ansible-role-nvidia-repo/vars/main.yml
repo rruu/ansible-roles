@@ -1,0 +1,3 @@
+---
+
+nvidia_repo_distarch: "{{ ansible_distribution | lower }}{{ ansible_distribution_version | replace('.', '') }}/{{ ansible_architecture }}"
